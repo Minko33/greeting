@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- グラデーション定義 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000428;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#004e92;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000428;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- アニメーション用のパス -->
+    <path id="circlePath1" d="M256,50 A206,206 0 0 1 256,462 A206,206 0 0 1 256,50" fill="none"/>
+    <path id="circlePath2" d="M256,100 A156,156 0 0 1 256,412 A156,156 0 0 1 256,100" fill="none"/>
+    <path id="circlePath3" d="M256,150 A106,106 0 0 1 256,362 A106,106 0 0 1 256,150" fill="none"/>
+  </defs>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="512" height="512" fill="url(#bgGradient)"/>
+  
+  <!-- 装飾的な背景パターン -->
+  <g opacity="0.1">
+    <circle cx="256" cy="256" r="240" fill="none" stroke="#ffffff" stroke-width="0.5"/>
+    <circle cx="256" cy="256" r="220" fill="none" stroke="#ffffff" stroke-width="0.5"/>
+    <circle cx="256" cy="256" r="200" fill="none" stroke="#ffffff" stroke-width="0.5"/>
+    <circle cx="256" cy="256" r="180" fill="none" stroke="#ffffff" stroke-width="0.5"/>
+  </g>
+
+  <!-- 外側の円形テキスト -->
+  <g fill="#ffffff">
+    <!-- 外周第1層 -->
+    <text font-family="Arial, sans-serif" font-size="20">
+      <textPath href="#circlePath1" startOffset="0">
+        Bonjour • Hola • नमस्ते • Merhaba • Ciao • Olá • Hej • Здравствуйте • வணக்கம் • Xin chào • مرحبا • হ্যালো
+      </textPath>
+    </text>
+    
+    <!-- 外周第2層 -->
+    <text font-family="Arial, sans-serif" font-size="18">
+      <textPath href="#circlePath2" startOffset="25%">
+        Guten Tag • Terve • Dzień dobry • Namaste • สวัสดี • Selamat pagi • Salām • မင်္ဂလာပါ • Hallå • God dag
+      </textPath>
+    </text>
+    
+    <!-- 外周第3層 -->
+    <text font-family="Arial, sans-serif" font-size="16">
+      <textPath href="#circlePath3" startOffset="50%">
+        Ayubowan • Bongu • Sawubona • Jambo • Buna ziua • Dobar dan • Sain baina uu • Salom
+      </textPath>
+    </text>
+  </g>
+
+  <!-- 中央の装飾的な要素 -->
+  <g transform="translate(256 256)">
+    <!-- 回転する装飾リング -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="60s" repeatCount="indefinite"/>
+      <circle r="120" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.3"/>
+      <circle r="100" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.3"/>
+      <circle r="80" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.3"/>
+    </g>
+
+    <!-- 波紋エフェクト -->
+    <circle r="60" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.2">
+      <animate attributeName="r" from="60" to="90" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" from="0.2" to="0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- 中央の地球シンボル -->
+  <g transform="translate(256 256)">
+    <circle r="50" fill="rgba(255,255,255,0.1)"/>
+    <ellipse rx="50" ry="15" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.5"/>
+    <ellipse rx="50" ry="15" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.5" transform="rotate(60)"/>
+    <ellipse rx="50" ry="15" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.5" transform="rotate(-60)"/>
+  </g>
+
+  <!-- グロー効果 -->
+  <circle cx="256" cy="256" r="180" fill="url(#centerGlow)" opacity="0.1"/>
+</svg>
